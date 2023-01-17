@@ -59,8 +59,6 @@ export const LoginUser = () => {
 
         setOpen(true);
         return;
-      } else {
-        console.log(`Didn't find userLogged: ${userLogged}`);
       }
 
       if (userName === "admin" && password === "admin") {

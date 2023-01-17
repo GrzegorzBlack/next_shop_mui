@@ -1,36 +1,58 @@
 import Link from "next/link";
 import { useAdmin } from "../../../contexts/AdminProvider";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUserCog } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
-import {
-  BoxDropdown,
-  AStyled,
-  BoxDropdownContent,
-  AContentStyled,
-} from "./AdminButtonStyles";
+import { BoxDropdown, BoxDropdownContent } from "./AdminButtonStyles";
 
 const AdminButton = ({ to, toAdmin }) => {
   const dispatchIsLogged = useAdmin().dispatch;
 
-  const handleCLick = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
     dispatchIsLogged({ type: "UNLOGGED" });
+    console.log("logged out");
   };
   return (
     <BoxDropdown>
-      <Link href={to}>
-        <AStyled>
-          <AdminPanelSettingsIcon />
-        </AStyled>
+      <Link href={toAdmin}>
+        <IconButton
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <AdminPanelSettingsIcon sx={{ fontSize: 48 }} />
+        </IconButton>
       </Link>
       <BoxDropdownContent>
-        <Link href={toAdmin}>
-          <AContentStyled>Admin</AContentStyled>
-        </Link>
-        <Link href={to}>
-          <AContentStyled onClick={handleCLick}>Log out</AContentStyled>
-        </Link>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem>Admin</MenuItem>
+          <Link href={to}>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          </Link>
+        </Menu>
       </BoxDropdownContent>
     </BoxDropdown>
   );
