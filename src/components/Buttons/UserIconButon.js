@@ -11,7 +11,6 @@ import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import {
   BoxDropdown,
   BoxDropdownContent,
-  AContentStyled,
 } from "./AdminButton/AdminButtonStyles";
 
 const UserLoggedButton = ({ to }) => {
@@ -60,7 +59,7 @@ const UserLoggedButton = ({ to }) => {
         >
           <MenuItem>{userName}</MenuItem>
           <Link href={to}>
-            <AContentStyled onClick={handleCLick}>Log out</AContentStyled>
+            <MenuItem onClick={handleCLick}>Log out</MenuItem>
           </Link>
         </Menu>
       </BoxDropdownContent>

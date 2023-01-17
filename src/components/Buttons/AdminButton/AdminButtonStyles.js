@@ -18,15 +18,3 @@ export const BoxDropdownContent = styled(Box)`
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 `;
-
-export const AContentStyled = styled(Typography)(() => ({
-  width: "100px",
-  color: "black",
-  padding: "12px 16px",
-  textDecoration: "none",
-  display: "block",
-  cursor: "pointer",
-  "&:hover": {
-    backgroundColor: "#CDFCF6",
-  },
-}));
