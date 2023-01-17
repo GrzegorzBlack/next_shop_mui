@@ -2,18 +2,16 @@ import Link from "next/link";
 import { useCart } from "../../contexts/CartProvider";
 import { useUser } from "../../contexts/UserProvider";
 import IconButton from "@mui/material/IconButton";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUserTie } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 
 import {
   BoxDropdown,
-  AStyled,
   BoxDropdownContent,
   AContentStyled,
-  TypographyStyled,
 } from "./AdminButton/AdminButtonStyles";
 
 const UserLoggedButton = ({ to }) => {
@@ -22,7 +20,15 @@ const UserLoggedButton = ({ to }) => {
   const stateOfUser = useUser().state;
 
   const { userName } = stateOfUser;
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const handleCLick = () => {
     const payload = {
       isLogged: false,
@@ -33,16 +39,30 @@ const UserLoggedButton = ({ to }) => {
   };
   return (
     <BoxDropdown>
-      <Link href={to}>
-        <IconButton>
-          <VerifiedUserIcon sx={{ fontSize: 48 }} />
-        </IconButton>
-      </Link>
+      <IconButton
+        id="basic-button"
+        aria-controls={open ? "basic-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+      >
+        <VerifiedUserIcon sx={{ fontSize: 48 }} />
+      </IconButton>
       <BoxDropdownContent>
-        <TypographyStyled>{userName}</TypographyStyled>
-        <Link href={to}>
-          <AContentStyled onClick={handleCLick}>Log out</AContentStyled>
-        </Link>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem>{userName}</MenuItem>
+          <Link href={to}>
+            <AContentStyled onClick={handleCLick}>Log out</AContentStyled>
+          </Link>
+        </Menu>
       </BoxDropdownContent>
     </BoxDropdown>
   );

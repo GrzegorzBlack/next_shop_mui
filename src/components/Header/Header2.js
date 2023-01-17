@@ -38,7 +38,7 @@ function ResponsiveAppBar() {
     if (stateOfAdmin) {
       return <AdminButton to={"/login"} toAdmin={"/admin"} />;
     } else if (isLogged) {
-      return <UserLoggedButton to={"/login"} />;
+      return <UserLoggedButton to={"/snacks"} />;
     } else {
       return <UserButton to={"/login"} />;
     }

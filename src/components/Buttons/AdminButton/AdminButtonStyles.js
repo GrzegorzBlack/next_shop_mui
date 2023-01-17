@@ -11,7 +11,7 @@ export const BoxDropdown = styled(Box)(() => ({
 }));
 
 export const BoxDropdownContent = styled(Box)`
-  width: 100px;
+  width: auto;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -19,7 +19,7 @@ export const BoxDropdownContent = styled(Box)`
   z-index: 1;
 `;
 
-export const AContentStyled = styled("a")(() => ({
+export const AContentStyled = styled(Typography)(() => ({
   width: "100px",
   color: "black",
   padding: "12px 16px",
@@ -30,12 +30,3 @@ export const AContentStyled = styled("a")(() => ({
     backgroundColor: "#CDFCF6",
   },
 }));
-
-export const TypographyStyled = styled(Typography)`
-  display: flex;
-  margin-top: 6px;
-  font-size: 18px;
-  padding-left: 16px;
-  color: black;
-  border-bottom: 1px solid black;
-`;

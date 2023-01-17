@@ -23,7 +23,6 @@ const AdminButton = ({ to, toAdmin }) => {
 
   const handleLogout = () => {
     dispatchIsLogged({ type: "UNLOGGED" });
-    console.log("logged out");
   };
   return (
     <BoxDropdown>
