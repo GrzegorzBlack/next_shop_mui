@@ -14,6 +14,7 @@ export const FormPageWrapper = styled("form")`
 `;
 
 export const LoginTextField = styled(TextField)`
+  margin-top: 20px;
   width: 100%;
 `;
 

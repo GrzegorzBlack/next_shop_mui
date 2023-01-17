@@ -1,24 +1,22 @@
 import Link from "next/link";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { ButtonStyled } from "./Button/ButtonStyles";
+import { useRouter } from "next/router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 
-const buttonSX = {
-  "&:hover": {
-    borderColor: "rgba(255,240,10,0.8)",
-  },
-};
-
 const CartButton = ({ to }) => {
+  const { pathname } = useRouter();
   return (
-    <Link href={to}>
-      <IconButton>
+    <IconButton
+      disabled={
+        pathname === "/" || pathname === "/login" || pathname === "/register"
+          ? true
+          : false
+      }
+    >
+      <Link href={to}>
         <ShoppingCartIcon sx={{ fontSize: 48 }} />
-      </IconButton>
-    </Link>
+      </Link>
+    </IconButton>
   );
 };
 export default CartButton;
