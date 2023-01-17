@@ -32,9 +32,10 @@ export const AContentStyled = styled("a")(() => ({
 }));
 
 export const TypographyStyled = styled(Typography)`
-  padding-left: 22px;
+  display: flex;
   margin-top: 6px;
   font-size: 18px;
+  padding-left: 16px;
   color: black;
   border-bottom: 1px solid black;
 `;
