@@ -14,7 +14,7 @@ const Login = () => {
       <FormBoxWrapper>
         <LoginUser />
         <SignUpBoxWrapper>
-          <p>You don't have an account?</p>
+          <p>You do not have an account?</p>
           <Link href="/register">
             <SignUpButton variant="outlined" endIcon={<SendIcon />}>
               Sing up
