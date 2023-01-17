@@ -10,16 +10,6 @@ export const BoxDropdown = styled(Box)(() => ({
   },
 }));
 
-export const AStyled = styled("a")`
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  border: none;
-  font-size: 20px;
-  background-color: inherit;
-`;
-
 export const BoxDropdownContent = styled(Box)`
   width: 100px;
   display: none;

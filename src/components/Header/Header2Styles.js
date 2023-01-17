@@ -25,6 +25,7 @@ export const HeaderIconsWrapper = styled(Box)`
   display: flex;
   justify-content: space-between;
   width: 140px;
+  margin-right: 16px;
 `;
 
 export const HeaderButton = styled(Button)`
