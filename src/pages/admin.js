@@ -11,7 +11,7 @@ import {
   AdminFormWrapper,
   ListBox,
 } from "../styles/pagesStyles/adminStyle";
-import LoginDialog from "../components/Modals/LoginUserDialog";
+import LoginDialog from "../components/Modals/LoginUserDialog/LoginUserDialog";
 
 const Admin = () => {
   const [open, setOpen] = useState(true);

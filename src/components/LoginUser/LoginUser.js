@@ -9,7 +9,7 @@ import {
   PasswordIconButton,
   LogInButton,
 } from "./LoginUserStyles";
-import LoginDialog from "../Modals/LoginUserDialog";
+import LoginDialog from "../Modals/LoginUserDialog/LoginUserDialog";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";

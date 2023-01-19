@@ -5,6 +5,9 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { TypographyStyled, DialogBox } from "./LoginUserDialogStyles";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 
 const LoginDialog = ({
   show,
@@ -24,9 +27,21 @@ const LoginDialog = ({
   };
   return (
     <Dialog open={show}>
-      {userLogged ? <DialogTitle>Hello {userLogged}!</DialogTitle> : null}
+      {userLogged ? (
+        <DialogTitle>
+          <DialogBox>
+            <Typography sx={{ fontSize: "30px" }}>Hello</Typography>{" "}
+            <TypographyStyled sx={{ fontSize: "30px" }}>
+              {userLogged}
+            </TypographyStyled>
+            <Typography sx={{ fontSize: "30px" }}>!</Typography>
+          </DialogBox>
+        </DialogTitle>
+      ) : null}
       <DialogContent>
-        <DialogContentText>{dialogTextOne}</DialogContentText>
+        <DialogContentText sx={{ color: "black" }}>
+          {dialogTextOne}
+        </DialogContentText>
         {dialogTextTwo ? (
           <DialogContentText>{dialogTextTwo}</DialogContentText>
         ) : null}
@@ -35,7 +50,9 @@ const LoginDialog = ({
         ) : null}
       </DialogContent>
       <DialogActions>
-        <Button onClick={(e) => handleCloseClick(e)}>OK</Button>
+        <Button variant="outlined" onClick={(e) => handleCloseClick(e)}>
+          OK
+        </Button>
       </DialogActions>
     </Dialog>
   );

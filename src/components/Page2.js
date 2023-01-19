@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCart } from "../contexts/CartProvider";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import LoginDialog from "../components/Modals/LoginUserDialog";
+import ProductDialog from "../components/Modals/ProductDialog";
 
 const Page = ({ productsState }) => {
   const [showModal, setShowModal] = useState(false);
@@ -69,10 +69,10 @@ const Page = ({ productsState }) => {
       />
 
       {showModal ? (
-        <LoginDialog
+        <ProductDialog
           onClose={() => setShowModal(false)}
           show={showModal}
-          dialogTextOne={`You added ${name} to your cart`}
+          productName={name}
         />
       ) : null}
     </div>

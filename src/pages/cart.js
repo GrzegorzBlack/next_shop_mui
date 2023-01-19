@@ -4,7 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import LoginDialog from "../components/Modals/LoginUserDialog";
+import LoginDialog from "../components/Modals/LoginUserDialog/LoginUserDialog";
 import {
   CartPageBox,
   BoxWrapper,

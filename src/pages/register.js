@@ -11,7 +11,7 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 
 import SendIcon from "@mui/icons-material/Send";
-import LoginDialog from "../components/Modals/LoginUserDialog";
+import LoginDialog from "../components/Modals/LoginUserDialog/LoginUserDialog";
 import {
   LoginMainWrapper,
   FormBoxWrapper,
