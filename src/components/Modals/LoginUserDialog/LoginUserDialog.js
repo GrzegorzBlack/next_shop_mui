@@ -5,7 +5,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { TypographyStyled, DialogBox } from "./LoginUserDialogStyles";
+import {
+  TypographyStyled,
+  DialogBox,
+  DialogTextStyled,
+} from "./LoginUserDialogStyles";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 
@@ -43,12 +47,10 @@ const LoginDialog = ({
           {dialogTextOne}
         </DialogContentText>
         {dialogTextTwo ? (
-          <DialogContentText sx={{ pt: 2 }}>{dialogTextTwo}</DialogContentText>
+          <DialogTextStyled sx={{ pt: 2 }}>{dialogTextTwo}</DialogTextStyled>
         ) : null}
         {dialogTextThree ? (
-          <DialogContentText sx={{ pt: 2 }}>
-            {dialogTextThree}
-          </DialogContentText>
+          <DialogTextStyled sx={{ pt: 2 }}>{dialogTextThree}</DialogTextStyled>
         ) : null}
       </DialogContent>
       <DialogActions>
