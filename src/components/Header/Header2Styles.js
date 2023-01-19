@@ -24,8 +24,7 @@ export const HeaderButtonsWrapper = styled(Box)`
 export const HeaderIconsWrapper = styled(Box)`
   display: flex;
   justify-content: space-between;
-  width: 140px;
-  margin-right: 16px;
+  width: 200px;
 `;
 
 export const HeaderButton = styled(Button)`
@@ -67,4 +66,14 @@ export const HeaderIconButton = styled(IconButton)`
   :active {
     background-color: #0000ff;
   }
+`;
+
+export const PriceBox = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 69px;
+  border: 1px solid black;
+  border-radius: 4px;
 `;

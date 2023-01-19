@@ -43,10 +43,12 @@ const LoginDialog = ({
           {dialogTextOne}
         </DialogContentText>
         {dialogTextTwo ? (
-          <DialogContentText>{dialogTextTwo}</DialogContentText>
+          <DialogContentText sx={{ pt: 2 }}>{dialogTextTwo}</DialogContentText>
         ) : null}
         {dialogTextThree ? (
-          <DialogContentText>{dialogTextThree}</DialogContentText>
+          <DialogContentText sx={{ pt: 2 }}>
+            {dialogTextThree}
+          </DialogContentText>
         ) : null}
       </DialogContent>
       <DialogActions>
