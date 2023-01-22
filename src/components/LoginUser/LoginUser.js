@@ -47,18 +47,20 @@ export const LoginUser = () => {
       const { userName } = values;
       const { password } = values;
 
-      const userLogged = item.find((user) => user.userName == userName);
+      if (item) {
+        const userLogged = item.find((user) => user.userName == userName);
 
-      if (userLogged) {
-        const { userName } = userLogged;
-        const payload = {
-          isLogged: true,
-          userName: userName,
-        };
-        dispatchUserLogged({ type: "LOGGED_UNLOGGED", payload });
+        if (userLogged) {
+          const { userName } = userLogged;
+          const payload = {
+            isLogged: true,
+            userName: userName,
+          };
+          dispatchUserLogged({ type: "LOGGED_UNLOGGED", payload });
 
-        setOpen(true);
-        return;
+          setOpen(true);
+          return;
+        }
       }
 
       if (userName === "admin" && password === "admin") {
