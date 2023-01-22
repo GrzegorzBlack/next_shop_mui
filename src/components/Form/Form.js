@@ -73,6 +73,7 @@ export const Form = () => {
         label="Enter product price"
         onChange={formik.handleChange}
         value={formik.values.price}
+        InputProps={{ inputProps: { min: 1, max: 999 } }}
         required
       />
       <FormControl sx={{ width: "200px" }}>
