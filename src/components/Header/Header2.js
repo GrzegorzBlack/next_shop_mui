@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
       <ImageBoxWrapper>
         <Toolbar disableGutters>
           <div>
-            <Link href={`/`}>
+            <Link href={isLogged ? "/snacks" : "/"}>
               <Image src="/Frame1.png" alt="me" width="220" height="100" />
             </Link>
           </div>

@@ -57,7 +57,7 @@ const UserLoggedButton = ({ to }) => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem>{userName}</MenuItem>
+          <MenuItem disabled>{userName}</MenuItem>
           <Link href={to}>
             <MenuItem onClick={handleCLick}>Log out</MenuItem>
           </Link>
