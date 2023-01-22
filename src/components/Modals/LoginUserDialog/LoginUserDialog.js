@@ -29,8 +29,16 @@ const LoginDialog = ({
     onClose();
     pushTo ? router.push(`/${pushTo}`) : null;
   };
+
+  const keyPress = (e) => {
+    if (e.keyCode == 0) {
+      onClose();
+      pushTo ? router.push(`/${pushTo}`) : null;
+    }
+  };
+
   return (
-    <Dialog open={show}>
+    <Dialog open={show} onKeyPress={keyPress}>
       {userLogged ? (
         <DialogTitle>
           <DialogBox>
@@ -54,7 +62,12 @@ const LoginDialog = ({
         ) : null}
       </DialogContent>
       <DialogActions>
-        <Button variant="outlined" onClick={(e) => handleCloseClick(e)}>
+        <Button
+          variant="outlined"
+          autoFocus
+          type="submit"
+          onClick={(e) => handleCloseClick(e)}
+        >
           OK
         </Button>
       </DialogActions>

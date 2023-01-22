@@ -8,12 +8,18 @@ import { DialogBox } from "./LoginUserDialog/LoginUserDialogStyles";
 import { Typography } from "@mui/material";
 
 const ProductDialog = ({ show, onClose, productName }) => {
-  const handleCloseClick = (e) => {
-    e.preventDefault();
+  const handleCloseClick = () => {
+    // e.preventDefault();
     onClose();
   };
+
+  const keyPress = (e) => {
+    if (e.keyCode == 0) {
+      onClose();
+    }
+  };
   return (
-    <Dialog open={show}>
+    <Dialog open={show} onKeyPress={keyPress}>
       <DialogContent sx={{ fontSize: "20px" }}>
         <DialogBox>
           {"You added  "}
@@ -27,7 +33,7 @@ const ProductDialog = ({ show, onClose, productName }) => {
         </DialogBox>
       </DialogContent>
       <DialogActions>
-        <Button variant="outlined" onClick={(e) => handleCloseClick(e)}>
+        <Button autoFocus variant="outlined" onClick={handleCloseClick}>
           OK
         </Button>
       </DialogActions>

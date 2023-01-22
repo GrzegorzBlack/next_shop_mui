@@ -5,8 +5,6 @@ const cart = {};
 const CartContext = createContext();
 
 const cartReducer = (state, action) => {
-  console.log(state);
-  // console.log(action);
   switch (action.type) {
     case "ADD_PRODUCT": {
       const key = action.id + action.category;
