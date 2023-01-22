@@ -24,6 +24,7 @@ export const HeaderButtonsWrapper = styled(Box)`
 export const HeaderIconsWrapper = styled(Box)`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 200px;
 `;
 
@@ -73,7 +74,7 @@ export const PriceBox = styled(Box)`
   justify-content: center;
   align-items: center;
   width: 80px;
-  height: 69px;
+  height: 40px;
   border: 1px solid black;
   border-radius: 4px;
 `;
