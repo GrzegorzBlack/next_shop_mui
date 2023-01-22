@@ -3,6 +3,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
+import { DialogBox } from "./LoginUserDialog/LoginUserDialogStyles";
 
 import { Typography } from "@mui/material";
 
@@ -13,14 +14,17 @@ const ProductDialog = ({ show, onClose, productName }) => {
   };
   return (
     <Dialog open={show}>
-      <DialogContent>
-        <DialogContentText sx={{ color: "black" }}>
-          {"You added "}
-          <Typography display="inline" sx={{ fontSize: "20px" }}>
-            {`" ${productName} "`}
+      <DialogContent sx={{ fontSize: "20px" }}>
+        <DialogBox>
+          {"You added  "}
+          <Typography
+            display="inline"
+            sx={{ fontSize: "20px", margin: "0 6px" }}
+          >
+            {`"${productName}"`}
           </Typography>
-          {" to your cart."}
-        </DialogContentText>
+          {"  to your cart."}
+        </DialogBox>
       </DialogContent>
       <DialogActions>
         <Button variant="outlined" onClick={(e) => handleCloseClick(e)}>

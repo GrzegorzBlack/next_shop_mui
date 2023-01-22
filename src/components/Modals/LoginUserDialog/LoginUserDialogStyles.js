@@ -12,6 +12,7 @@ export const DialogStyled = styled(Dialog)`
 
 export const DialogBox = styled(Box)`
   display: flex;
+  align-items: center;
 `;
 
 export const LogInButton = styled(Button)`
