@@ -67,7 +67,7 @@ const productsReducer = (state, action) => {
       return [
         ...state,
         {
-          id: action.id,
+          id: action.id + action.category,
           category: action.category,
           name: action.name,
           price: action.price,
