@@ -38,18 +38,6 @@ const Register = () => {
     event.preventDefault();
   };
 
-  let item;
-
-  if (typeof window !== "undefined") {
-    if (typeof window.localStorage.getItem("user") == "null") {
-      item = 0;
-    } else {
-      item = 0;
-    }
-  } else if (typeof window == "null") {
-    item = 0;
-  }
-
   const change = (values) => {
     setShowModal(true);
     setUserName(values.userName);
