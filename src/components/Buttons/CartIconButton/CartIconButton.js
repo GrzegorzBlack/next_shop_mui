@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
+import { ShoppingCartIconStyled } from "./CartIconButtonStyles";
 
 const CartButton = ({ to }) => {
   const { pathname } = useRouter();
@@ -14,7 +15,7 @@ const CartButton = ({ to }) => {
       }
     >
       <Link href={to}>
-        <ShoppingCartIcon sx={{ fontSize: 48 }} />
+        <ShoppingCartIconStyled />
       </Link>
     </IconButton>
   );

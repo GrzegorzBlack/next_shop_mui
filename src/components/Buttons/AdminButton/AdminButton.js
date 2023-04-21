@@ -6,7 +6,11 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-import { BoxDropdown, BoxDropdownContent } from "./AdminButtonStyles";
+import {
+  BoxDropdown,
+  BoxDropdownContent,
+  AdminButtonStyled,
+} from "./AdminButtonStyles";
 
 const AdminButton = ({ to, toAdmin }) => {
   const dispatchIsLogged = useAdmin().dispatch;
@@ -27,7 +31,8 @@ const AdminButton = ({ to, toAdmin }) => {
   return (
     <BoxDropdown>
       <Link href={toAdmin}>
-        <IconButton
+        <AdminButtonStyled
+          sx={{ fontSize: 20 }}
           id="basic-button"
           aria-controls={open ? "basic-menu" : undefined}
           aria-haspopup="true"
@@ -35,7 +40,7 @@ const AdminButton = ({ to, toAdmin }) => {
           onClick={handleClick}
         >
           <AdminPanelSettingsIcon sx={{ fontSize: 48 }} />
-        </IconButton>
+        </AdminButtonStyled>
       </Link>
       <BoxDropdownContent>
         <Menu

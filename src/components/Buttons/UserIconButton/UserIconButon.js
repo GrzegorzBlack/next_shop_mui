@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { useCart } from "../../contexts/CartProvider";
-import { useUser } from "../../contexts/UserProvider";
+import { useCart } from "../../../contexts/CartProvider";
+import { useUser } from "../../../contexts/UserProvider";
 import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { VerifiedUserIconStyled } from "./UserIconButtonStyles";
 
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 
 import {
   BoxDropdown,
   BoxDropdownContent,
-} from "./AdminButton/AdminButtonStyles";
+} from "../AdminButton/AdminButtonStyles";
 
 const UserLoggedButton = ({ to }) => {
   const dispatchCart = useCart().dispatch;
@@ -45,7 +46,7 @@ const UserLoggedButton = ({ to }) => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <VerifiedUserIcon sx={{ fontSize: 48 }} />
+        <VerifiedUserIconStyled />
       </IconButton>
       <BoxDropdownContent>
         <Menu

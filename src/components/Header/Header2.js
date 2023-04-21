@@ -11,12 +11,13 @@ import {
   HeaderButtonsWrapper,
   HeaderIconsWrapper,
   PriceBox,
+  ImageStyled,
 } from "./Header2Styles";
 import MenuItem from "@mui/material/MenuItem";
-import CartButton from "../Buttons/CartIconButton";
-import UserButton from "../Buttons/LoginButton";
+import CartButton from "../Buttons/CartIconButton/CartIconButton";
+import UserButton from "../Buttons/LoginButton/LoginButton";
 import AdminButton from "../Buttons/AdminButton/AdminButton";
-import UserLoggedButton from "../Buttons/UserIconButon";
+import UserLoggedButton from "../Buttons/UserIconButton/UserIconButon";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAdmin } from "../../contexts/AdminProvider";
@@ -64,7 +65,12 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           <div>
             <Link href={isLogged ? "/snacks" : "/"}>
-              <Image src="/Frame1.png" alt="me" width="220" height="100" />
+              <ImageStyled
+                src="/Frame1.png"
+                alt="me"
+                width="220"
+                height="100"
+              />
             </Link>
           </div>
 

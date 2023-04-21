@@ -8,14 +8,17 @@ export const MainPageWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 1200px;
-  height: 600px;
+  width: auto;
+  height: auto;
 `;
 
 export const WelcomeWrapper = styled(Box)`
   display: flex;
   justify-content: center;
   height: 200px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `;
 
 export const WelcomeBox = styled(Box)`
@@ -29,7 +32,7 @@ export const ORBox = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 160px;
+  height: auto;
 `;
 
 export const OptionsBoxWrapper = styled(Box)`
@@ -38,6 +41,13 @@ export const OptionsBoxWrapper = styled(Box)`
   align-items: flex-start;
   height: 600px;
   width: auto;
+  @media (max-width: 768px) {
+    height: auto;
+  }
+`;
+
+export const OptionsBoxWrapperTypography = styled(Typography)`
+  text-align: center;
 `;
 
 export const OptionsBox = styled(Box)`
@@ -48,6 +58,10 @@ export const OptionsBox = styled(Box)`
   height: 300px;
   width: 300px;
   border: 2px solid orange;
+  @media (max-width: 768px) {
+    height: 300px;
+    width: 200px;
+  }
 `;
 
 export const OptionsButton = styled(Button)`
