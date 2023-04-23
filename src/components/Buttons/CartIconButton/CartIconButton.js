@@ -2,12 +2,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
-import { ShoppingCartIconStyled } from "./CartIconButtonStyles";
+import {
+  ShoppingCartIconStyled,
+  ShoppingCartIconButtonStyled,
+} from "./CartIconButtonStyles";
 
 const CartButton = ({ to }) => {
   const { pathname } = useRouter();
   return (
-    <IconButton
+    <ShoppingCartIconButtonStyled
       disabled={
         pathname === "/" || pathname === "/login" || pathname === "/register"
           ? true
@@ -17,7 +20,7 @@ const CartButton = ({ to }) => {
       <Link href={to}>
         <ShoppingCartIconStyled />
       </Link>
-    </IconButton>
+    </ShoppingCartIconButtonStyled>
   );
 };
 export default CartButton;

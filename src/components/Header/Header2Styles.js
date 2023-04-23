@@ -17,6 +17,10 @@ export const ImageStyled = styled(Image)`
     height: 60px;
     width: 100px;
   }
+  @media (max-width: 400px) {
+    height: 40px;
+    width: 60px;
+  }
 `;
 
 export const MenuBoxWrapper = styled(Box)`
@@ -51,6 +55,10 @@ export const HeaderButton = styled(Button)`
     width: auto;
     font-size: 8px;
   }
+  @media (max-width: 400px) {
+    padding: 4px 4px;
+    font-size: 6px;
+  }
 `;
 
 export const HeaderBox = styled(Box)`
@@ -73,19 +81,6 @@ export const HeaderDiv = styled(Box)`
   align-items: center;
   width: 140px;
 `;
-
-// export const HeaderIconButton = styled(IconButton)`
-//   display: flex;
-//   justify-content: center;
-//   width: 40px;
-//   height: 40px;
-//   color: #ffffff;
-//   border-radius: 0;
-//   background-color: #030303;
-//   :active {
-//     background-color: #0000ff;
-//   }
-// `;
 
 export const PriceBox = styled(Box)`
   display: flex;

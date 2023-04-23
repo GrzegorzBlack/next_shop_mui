@@ -6,4 +6,7 @@ export const VerifiedUserIconStyled = styled(VerifiedUserIcon)`
   @media (max-width: 510px) {
     font-size: 38px;
   }
+  @media (max-width: 400px) {
+    font-size: 18px;
+  }
 `;

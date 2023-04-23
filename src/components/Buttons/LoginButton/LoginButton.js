@@ -1,19 +1,14 @@
 import Link from "next/link";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser } from "@fortawesome/free-solid-svg-icons";
-import PersonIcon from "@mui/icons-material/Person";
-import { ButtonStyled, BoxDropdown } from "../Button/ButtonStyles";
-import { PersonIconStyled } from "./LoginButtonStyles";
-import IconButton from "@mui/material/IconButton";
+import { BoxDropdown } from "../Button/ButtonStyles";
+import { PersonIconStyled, LoginIconButtonStyled } from "./LoginButtonStyles";
 
 const UserButton = ({ to }) => {
   return (
     <BoxDropdown>
       <Link href={to}>
-        <IconButton>
+        <LoginIconButtonStyled>
           <PersonIconStyled />
-        </IconButton>
-        {/* </ButtonStyled> */}
+        </LoginIconButtonStyled>
       </Link>
     </BoxDropdown>
   );
