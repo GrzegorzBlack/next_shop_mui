@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useCart } from "../contexts/CartProvider";
+import { useCart } from "../../contexts/CartProvider";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import ProductDialog from "../components/Modals/ProductDialog";
+import ProductDialog from "../Modals/ProductDialog";
+import { DataGridBox } from "./PageStyles";
 
 const Page = ({ productsState }) => {
   const [showModal, setShowModal] = useState(false);
@@ -30,12 +31,19 @@ const Page = ({ productsState }) => {
   };
 
   const columns = [
-    { field: "col1", headerName: "Product name", width: 160 },
-    { field: "col2", headerName: "Product price", type: "number", width: 160 },
+    { field: "col1", headerName: "Product name", maxWidth: 160, flex: 1 },
+    {
+      field: "col2",
+      headerName: "Product price",
+      type: "number",
+      maxWidth: 160,
+      flex: 1,
+    },
     {
       field: "col3",
       headerName: "Click to Buy",
-      width: 150,
+      maxWidth: 150,
+      flex: 1,
       type: "number",
       renderCell: (cellValues) => {
         return (
@@ -60,7 +68,7 @@ const Page = ({ productsState }) => {
   }));
 
   return (
-    <div style={{ height: "600px", width: "550px", marginLeft: "100px" }}>
+    <DataGridBox>
       <DataGrid
         rows={rowz}
         columns={columns}
@@ -75,7 +83,7 @@ const Page = ({ productsState }) => {
           productName={name}
         />
       ) : null}
-    </div>
+    </DataGridBox>
   );
 };
 

@@ -8,16 +8,16 @@ export const AdminPageWrapper = styled(Box)`
   margin: 20px;
 `;
 
-export const ListBoxWrapper = styled(Box)`
-  display: flex;
-  flex-basis: auto;
-  padding: 10px;
-`;
-
 export const ListBox = styled(Box)`
   display: flex;
   padding: 10px;
   border: 2px solid #ffc93c;
+`;
+
+export const ListBoxWrapper = styled(Box)`
+  display: flex;
+  flex-basis: auto;
+  padding: 10px;
 `;
 
 export const StyledBoxWrapper = styled(Box)`

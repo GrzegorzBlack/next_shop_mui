@@ -7,7 +7,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-import { StyledForm } from "./FormStyles";
+import { StyledForm, StyledFormControl } from "./FormStyles";
 
 export const Form = () => {
   const dispatchSnacks = useProducts().dispatch;
@@ -76,7 +76,7 @@ export const Form = () => {
         InputProps={{ inputProps: { min: 1, max: 999 } }}
         required
       />
-      <FormControl sx={{ width: "200px" }}>
+      <FormControl>
         <InputLabel>Choose product type</InputLabel>
         <Select
           id="demo-simple-select"

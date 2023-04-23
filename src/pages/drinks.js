@@ -1,4 +1,4 @@
-import Page2 from "../components/Page2";
+import Page2 from "../components/Page/Page";
 import { useProducts } from "../contexts/ProductsProvider";
 
 const Drinks = () => {

@@ -1,5 +1,9 @@
 import ListItemText from "@mui/material/ListItemText";
-import { AdminListItem, StyledListItemButton } from "./AdminProduct2Styles";
+import {
+  AdminListItem,
+  StyledListItemButton,
+  AdminListItemText,
+} from "./AdminProduct2Styles";
 
 export const AdminProduct2 = ({ id, dispatch, name, price }) => {
   const handleCLick = () => {
@@ -7,7 +11,7 @@ export const AdminProduct2 = ({ id, dispatch, name, price }) => {
   };
   return (
     <AdminListItem>
-      <ListItemText sx={{ flex: "0 0 170px" }}>{name}</ListItemText>
+      <AdminListItemText>{name}</AdminListItemText>
       <ListItemText sx={{ flex: "0 0 50px" }}>{`${price} zł`}</ListItemText>
       <StyledListItemButton onClick={handleCLick} sx={{ flex: "0 0 130px" }}>
         Delete product

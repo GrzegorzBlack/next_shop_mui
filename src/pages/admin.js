@@ -1,57 +1,33 @@
-import List from "@mui/material/List";
-
-import { AdminProduct2 } from "../components/AdminProduct/AdminProduct2";
 import { useProducts } from "../contexts/ProductsProvider";
 import { Form } from "../components/Form/Form";
 import { useState } from "react";
+import ProductsTable from "../components/ProductsTable/ProductsTable";
 import {
   AdminPageWrapper,
-  ListBoxWrapper,
   StyledBoxWrapper,
   AdminFormWrapper,
-  ListBox,
 } from "../styles/pagesStyles/adminStyle";
 import LoginDialog from "../components/Modals/LoginUserDialog/LoginUserDialog";
 
 const Admin = () => {
   const [open, setOpen] = useState(true);
 
-  const snacksState = useProducts().snacks;
-  const dispatchSnacks = useProducts().dispatch;
+  const { snacks: snacksState } = useProducts();
+  const { dispatch: dispatchSnacks } = useProducts();
 
-  const drinksState = useProducts().drinks;
-  const dispatchDrinks = useProducts().dispatch;
+  const { drinks: drinksState } = useProducts();
+  const { dispatch: dispatchDrinks } = useProducts();
 
-  const spiritsState = useProducts().spirits;
-  const dispatchSpirits = useProducts().dispatch;
-
-  const ProductsWrapper = ({ items, dispatchProduct }) => {
-    const renderedProducts = items.map((product) => (
-      <AdminProduct2
-        key={product.id + product.category}
-        dispatch={dispatchProduct}
-        {...product}
-      />
-    ));
-
-    return (
-      <ListBox>
-        <ListBoxWrapper>
-          <List>{renderedProducts}</List>
-        </ListBoxWrapper>
-      </ListBox>
-    );
-  };
+  const { spirits: spiritsState } = useProducts();
+  const { dispatch: dispatchSpirits } = useProducts();
 
   return (
     <>
       <AdminPageWrapper>
-        <ProductsWrapper items={snacksState} dispatchProduct={dispatchSnacks} />
-        <ProductsWrapper items={drinksState} dispatchProduct={dispatchDrinks} />
-        <ProductsWrapper
-          items={spiritsState}
-          dispatchProduct={dispatchSpirits}
-        />
+        <ProductsTable items={snacksState} dispatchProduct={dispatchSnacks} />
+        <ProductsTable items={drinksState} dispatchProduct={dispatchDrinks} />
+        <ProductsTable items={spiritsState} dispatchProduct={dispatchSpirits} />
+
         <StyledBoxWrapper>
           <AdminFormWrapper>
             <Form />
