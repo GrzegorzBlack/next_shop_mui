@@ -28,6 +28,31 @@ export const WelcomeBox = styled(Box)`
   align-items: center;
 `;
 
+export const WelcomeTypography = styled(Typography)`
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  @media (max-width: 420px) {
+    font-size: 24px;
+  }
+`;
+export const ChooseTypography = styled(Typography)`
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
+`;
+
+export const ORTypography = styled(Typography)`
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
+`;
 export const ORBox = styled(Box)`
   display: flex;
   justify-content: center;

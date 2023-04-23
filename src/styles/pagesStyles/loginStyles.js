@@ -29,4 +29,8 @@ export const SignUpBoxWrapper = styled(Box)`
 export const SignUpButton = styled(Button)`
   height: 30px;
   align-self: center;
+  @media (max-width: 400px) {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
 `;

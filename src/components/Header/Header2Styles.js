@@ -27,9 +27,10 @@ export const MenuBoxWrapper = styled(Box)`
   margin-left: 32px;
   margin-right: 32px;
   display: { xs: "flex", md: "none" };
-  @media (max-width: 510px) {
-    margin: 0;
+  @media (max-width: 526px) {
+    margin: 0 10px;
   }
+  
 `;
 
 export const HeaderButtonsWrapper = styled(Box)`
@@ -51,13 +52,16 @@ export const HeaderButton = styled(Button)`
   background-color: #ffc93c;
   border-color: #ffc93c;
   @media (max-width: 768px) {
-    height: auto;
-    width: auto;
-    font-size: 8px;
+    font-size: 12px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 480px) {
     padding: 4px 4px;
-    font-size: 6px;
+    font-size: 12px;
+  }
+  @media (max-width: 420px) {
+    padding: 0;
+    font-size: 10px;
+    min-width: 56px;
   }
 `;
 

@@ -9,6 +9,9 @@ import {
   OptionsBox,
   OptionsButton,
   OptionsBoxWrapperTypography,
+  WelcomeTypography,
+  ChooseTypography,
+  ORTypography,
 } from "../styles/pagesStyles/indexStyles";
 import Container from "@mui/material/Container";
 
@@ -18,13 +21,13 @@ export default function Home() {
       <MainPageWrapper>
         <WelcomeWrapper>
           <WelcomeBox>
-            <h1>Welcome to React Shop!</h1>
-            <h2>Choose your buying options:</h2>
+            <WelcomeTypography>Welcome to React Shop!</WelcomeTypography>
+            <ChooseTypography>Choose your buying options:</ChooseTypography>
           </WelcomeBox>
         </WelcomeWrapper>
         <ORBox>
           <div>
-            <h1>OR</h1>
+            <ORTypography>OR</ORTypography>
           </div>
         </ORBox>
         <OptionsBoxWrapper>
