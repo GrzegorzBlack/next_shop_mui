@@ -12,6 +12,7 @@ import {
   HeaderIconsWrapper,
   PriceBox,
   ImageStyled,
+  PriceTypography,
 } from "./Header2Styles";
 import MenuItem from "@mui/material/MenuItem";
 import CartButton from "../Buttons/CartIconButton/CartIconButton";
@@ -23,7 +24,6 @@ import { useRouter } from "next/router";
 import { useAdmin } from "../../contexts/AdminProvider";
 import { useUser } from "../../contexts/UserProvider";
 import { useCart } from "../../contexts/CartProvider";
-import Image from "next/image";
 
 const pages = ["snacks", "drinks", "spirits"];
 
@@ -63,16 +63,15 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <ImageBoxWrapper>
         <Toolbar disableGutters>
-          <div>
-            <Link href={isLogged ? "/snacks" : "/"}>
-              <ImageStyled
-                src="/Frame1.png"
-                alt="me"
-                width="220"
-                height="100"
-              />
-            </Link>
-          </div>
+          <Link href={isLogged ? "/snacks" : "/"}>
+            <ImageStyled
+              component="img"
+              src="/Frame1.png"
+              alt="me"
+              width="220"
+              height="100"
+            />
+          </Link>
 
           <MenuBoxWrapper>
             <Menu
@@ -126,9 +125,7 @@ function ResponsiveAppBar() {
           <HeaderIconsWrapper>
             {totalCartValue > 0 ? (
               <PriceBox>
-                <Typography sx={{ borderColor: "black" }}>
-                  {`${totalCartValue} PLN`}
-                </Typography>
+                <PriceTypography>{`${totalCartValue} PLN`}</PriceTypography>
               </PriceBox>
             ) : (
               <PriceBox sx={{ visibility: "hidden" }}>

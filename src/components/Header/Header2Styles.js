@@ -5,38 +5,47 @@ import Button from "@mui/material/Button";
 import Image from "next/image";
 
 export const ImageBoxWrapper = styled(Box)`
-  margin-left: 32px;
-  margin-right: 32px;
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     margin: 0;
   }
 `;
 
-export const ImageStyled = styled(Image)`
+export const ImageStyled = styled(Box)`
+  margin-right: 8px;
   @media (max-width: 768px) {
     height: 60px;
-    width: 100px;
+    width: 90px;
+    margin: 2px;
   }
-  @media (max-width: 400px) {
-    height: 40px;
-    width: 60px;
+
+  @media (max-width: 420px) {
+    height: 30px;
+    width: 36px;
+    margin: 2px;
+    display: none;
+  }
+
+  @media (max-width: 420px) {
+    height: 30px;
+    width: 36px;
+    margin: 2px;
+    display: none;
   }
 `;
 
 export const MenuBoxWrapper = styled(Box)`
   margin-left: 32px;
   margin-right: 32px;
-  display: { xs: "flex", md: "none" };
-  @media (max-width: 526px) {
-    margin: 0 10px;
+  @media (max-width: 580px) {
+    margin-left: 2px;
+    margin-right: 2px;
   }
-  
 `;
 
 export const HeaderButtonsWrapper = styled(Box)`
   flex-grow: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 export const HeaderIconsWrapper = styled(Box)`
@@ -54,14 +63,15 @@ export const HeaderButton = styled(Button)`
   @media (max-width: 768px) {
     font-size: 12px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     padding: 4px 4px;
     font-size: 12px;
   }
-  @media (max-width: 420px) {
-    padding: 0;
-    font-size: 10px;
-    min-width: 56px;
+  @media (max-width: 480px) {
+    padding: 2 0;
+    font-size: 8px;
+    width: auto;
+    margin: 0 2px;
   }
 `;
 
@@ -95,6 +105,22 @@ export const PriceBox = styled(Box)`
   border: 1px solid black;
   border-radius: 4px;
   @media (max-width: 768px) {
-    width: 0;
+    width: 58px;
+    font-size: 12px;
+  }
+  @media (max-width: 480px) {
+    width: 48px;
+    font-size: 10px;
+  }
+`;
+
+export const PriceTypography = styled(Typography)`
+  font-size: 16px;
+  border-color: "black";
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+  @media (max-width: 480px) {
+    font-size: 10px;
   }
 `;
