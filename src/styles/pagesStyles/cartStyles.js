@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 export const CartPageBox = styled(Box)`
   display: flex;
   justify-content: center;
-  height: 600px;
+  height: auto;
   margin: 20px;
   @media (max-width: 768px) {
     margin: 4px;
@@ -16,7 +16,7 @@ export const CartPageBox = styled(Box)`
 
 export const BoxWrapper = styled(Box)`
   width: 80%;
-  height: auto;
+  padding-bottom: 20px;
   border: 2px solid gray;
   @media (max-width: 1024px) {
     width: 96%;
@@ -89,7 +89,6 @@ export const ProductTypography = styled(Typography)`
 
 export const DataGridWrapper = styled(Box)`
   width: 100%;
-  height: 60%;
   marginleft: 100px;
 `;
 
@@ -106,7 +105,7 @@ export const DataGridStyled = styled(DataGrid)`
 export const StyledBox = styled(Box)`
   display: flex;
   justify-content: flex-end;
-  margin: 0 12px;
+  margin: 15px 12px;
 `;
 
 export const CartButtonWrapper = styled(Box)`

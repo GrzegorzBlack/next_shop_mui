@@ -7,6 +7,7 @@ export const DialogBox = styled(Box)`
   display: flex;
   align-items: center;
   @media (max-width: 480px) {
+    min-width: 120px;
     flex-direction: column;
     padding: 4px 4px;
   }
