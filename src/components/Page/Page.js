@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCart } from "../../contexts/CartProvider";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import ProductDialog from "../Modals/ProductDialog";
+import ProductDialog from "../Modals/ProductDialog/ProductDialog";
 import { DataGridBox } from "./PageStyles";
 
 const Page = ({ productsState }) => {

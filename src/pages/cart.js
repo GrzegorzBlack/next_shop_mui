@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { useCart } from "../contexts/CartProvider";
-import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import LoginDialog from "../components/Modals/LoginUserDialog/LoginUserDialog";
+import { Buttons } from "../components/Buttons/CartProductButtons/Buttons";
 import {
   CartPageBox,
   BoxWrapper,
   DataGridWrapper,
   StyledBox,
+  TableHeader,
+  TableProductWrapper,
+  ProductTypography,
+  OneBox,
+  HeaderTitleTypography,
+  OneBoxName,
+  BoxButtons,
+  ProductNameBox,
 } from "../styles/pagesStyles/cartStyles";
 
 const Cart = () => {
@@ -32,89 +40,52 @@ const Cart = () => {
     dispatch({ type: "DELETE_CART" });
   }
 
-  const handleAddOne = (event, cellValues) => {
-    const product = cellValues.id + cellValues.row.col2;
-    dispatch({ product, type: "ADD_QUANTITY" });
-  };
-
-  const handleMinusOne = (event, cellValues) => {
-    const product = cellValues.id + cellValues.row.col2;
-    dispatch({ product, type: "SUBSTRACT_QUANTITY" });
-  };
-
-  const handleDelete = (event, cellValues) => {
-    const product = cellValues.id + cellValues.row.col2;
-    dispatch({ product, type: "DELETE_PRODUCT" });
-  };
-
-  const columns = [
-    { field: "col1", headerName: "Product name", width: 160 },
-    {
-      field: "col2",
-      headerName: "Category",
-      hide: "true",
-    },
-    { field: "col3", headerName: "Product price", type: "number", width: 160 },
-    { field: "col4", headerName: "Quantity", type: "number", width: 160 },
-    {
-      field: "col5",
-      headerName: "Actions",
-      headerAlign: "center",
-      width: 260,
-      renderCell: (cellValues) => {
-        return (
-          <>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={(event) => {
-                handleAddOne(event, cellValues);
-              }}
-            >
-              +
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={(event) => {
-                handleMinusOne(event, cellValues);
-              }}
-            >
-              -
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={(event) => {
-                handleDelete(event, cellValues);
-              }}
-              style={{ fontSize: "10px" }}
-            >
-              <div>Delete product</div>
-            </Button>
-          </>
-        );
-      },
-    },
-    { field: "col6", headerName: "Total price", type: "number", width: 160 },
-  ];
-
-  const rows = allProducts.map((product) => ({
-    id: `${product[1].id}`,
-    col1: `${product[1].name}`,
-    col2: `${product[1].category}`,
-    col3: `${product[1].price} zł`,
-    col4: `${product[1].quantity}`,
-    col5: `${product[1].quantity * product[1].price} zł`,
-    col6: `${product[1].quantity * product[1].price} zł`,
-  }));
+  const rowz = allProducts.map((product) => {
+    return (
+      <TableProductWrapper key={product[1].id}>
+        <OneBoxName>
+          <ProductTypography>{product[1].name}</ProductTypography>
+        </OneBoxName>
+        <OneBox>
+          <HeaderTitleTypography>{`${product[1].price} zł`}</HeaderTitleTypography>
+        </OneBox>
+        <OneBox>
+          <HeaderTitleTypography>{product[1].quantity}</HeaderTitleTypography>
+        </OneBox>
+        <BoxButtons>
+          <Buttons productData={product} />
+        </BoxButtons>
+        <OneBox>
+          <HeaderTitleTypography>
+            {`${product[1].quantity * product[1].price} zł`}
+          </HeaderTitleTypography>
+        </OneBox>
+      </TableProductWrapper>
+    );
+  });
 
   return (
     <CartPageBox>
       <BoxWrapper>
         <DataGridWrapper>
-          <DataGrid rows={rows} columns={columns} />
+          <TableHeader>
+            <ProductNameBox>
+              <HeaderTitleTypography>Product name</HeaderTitleTypography>
+            </ProductNameBox>
+            <OneBox>
+              <HeaderTitleTypography>Product price</HeaderTitleTypography>
+            </OneBox>
+            <OneBox>
+              <HeaderTitleTypography>Quantity</HeaderTitleTypography>
+            </OneBox>
+            <BoxButtons>
+              <HeaderTitleTypography>Actions</HeaderTitleTypography>
+            </BoxButtons>
+            <OneBox>
+              <HeaderTitleTypography>Total price</HeaderTitleTypography>
+            </OneBox>
+          </TableHeader>
+          {rowz}
         </DataGridWrapper>
         <StyledBox>
           <Box>

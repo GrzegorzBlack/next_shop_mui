@@ -1,15 +1,14 @@
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import { DialogBox } from "./LoginUserDialog/LoginUserDialogStyles";
-
-import { Typography } from "@mui/material";
+import {
+  DialogBox,
+  ContentStyled,
+  DialogTypography,
+} from "./ProductDialogStyles";
 
 const ProductDialog = ({ show, onClose, productName }) => {
   const handleCloseClick = () => {
-    // e.preventDefault();
     onClose();
   };
 
@@ -20,18 +19,13 @@ const ProductDialog = ({ show, onClose, productName }) => {
   };
   return (
     <Dialog open={show} onKeyPress={keyPress}>
-      <DialogContent sx={{ fontSize: "20px" }}>
+      <ContentStyled>
         <DialogBox>
-          {"You added  "}
-          <Typography
-            display="inline"
-            sx={{ fontSize: "20px", margin: "0 6px" }}
-          >
-            {`"${productName}"`}
-          </Typography>
-          {"  to your cart."}
+          {"You added"}
+          <DialogTypography>{`"${productName}"`}</DialogTypography>
+          {"to your cart."}
         </DialogBox>
-      </DialogContent>
+      </ContentStyled>
       <DialogActions>
         <Button autoFocus variant="outlined" onClick={handleCloseClick}>
           OK

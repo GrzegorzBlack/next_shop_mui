@@ -16,6 +16,9 @@ export const FormBoxWrapper = styled(Box)`
   margin-top: 100px;
   padding: 20px;
   border: 2px solid orange;
+  @media (max-width: 480px) {
+    margin-top: 60px;
+  }
 `;
 
 export const SignUpBoxWrapper = styled(Box)`

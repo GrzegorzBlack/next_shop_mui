@@ -2,7 +2,6 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-import Image from "next/image";
 
 export const ImageBoxWrapper = styled(Box)`
   @media (max-width: 810px) {
@@ -36,6 +35,10 @@ export const ImageStyled = styled(Box)`
 export const MenuBoxWrapper = styled(Box)`
   margin-left: 32px;
   margin-right: 32px;
+  @media (max-width: 780px) {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
   @media (max-width: 580px) {
     margin-left: 2px;
     margin-right: 2px;

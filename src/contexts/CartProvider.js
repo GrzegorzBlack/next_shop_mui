@@ -8,7 +8,6 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_PRODUCT": {
       const key = action.id + action.category;
-      console.log(key);
       if (state[key]) {
         return {
           ...state,
@@ -31,7 +30,6 @@ const cartReducer = (state, action) => {
     }
     case "ADD_QUANTITY": {
       const key = action.product;
-      console.log(key);
       if (state[key]) {
         return {
           ...state,
@@ -45,7 +43,6 @@ const cartReducer = (state, action) => {
     }
     case "SUBSTRACT_QUANTITY": {
       const key = action.product;
-      console.log(key);
       if (state[key]) {
         if (state[key].quantity > 0) {
           return {
